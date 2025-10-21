@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -54,6 +55,73 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Partnership Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in">
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <div className="text-center space-y-6">
+              <div className="flex justify-center">
+                <div className="bg-gradient-to-br from-blue-100 to-orange-100 rounded-full p-4">
+                  <Award className="w-12 h-12 text-blue-600" />
+                </div>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Nous recherchons des partenaires
+              </h2>
+
+              <div className="space-y-4 text-lg text-gray-700">
+                <p>
+                  Pour enrichir notre base de données IA et améliorer la détection des risques, nous avons besoin de :
+                </p>
+                <ul className="text-left space-y-2 max-w-lg mx-auto">
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span><strong>Photos de chantier</strong> (situations réelles, risques identifiés)</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span><strong>Normes et réglementations</strong> sectorielles</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span><strong>Processus sécurité et qualité</strong> de votre organisation</span>
+                  </li>
+                </ul>
+                <p className="font-semibold text-blue-600">
+                  Ensemble, rendons les chantiers plus sûrs pour tous.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <button
+                  onClick={() => {
+                    setShowPopup(false);
+                    scrollToSection('partenariat');
+                  }}
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition shadow-lg hover:shadow-xl"
+                >
+                  Devenir partenaire
+                </button>
+                <button
+                  onClick={() => setShowPopup(false)}
+                  className="bg-gray-100 text-gray-700 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition"
+                >
+                  Plus tard
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
