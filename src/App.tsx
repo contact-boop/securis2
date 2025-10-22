@@ -127,7 +127,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <img src="/sécuriv logo v2.png" alt="Securis Logo" className="h-10 w-10" />
+              <img src="/securiv logo v2.png" alt="Securis Logo" className="h-10 w-10" />
               <span className="text-2xl font-bold text-gray-900">Securis</span>
             </div>
 
@@ -500,7 +500,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center space-x-3">
-              <img src="/sécuriv logo v2.png" alt="Securis Logo" className="h-10 w-10" />
+              <img src="/securiv logo v2.png" alt="Securis Logo" className="h-10 w-10" />
               <span className="text-2xl font-bold">Securis</span>
             </div>
 
